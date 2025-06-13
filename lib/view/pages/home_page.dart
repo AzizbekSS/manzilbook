@@ -4,6 +4,7 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
 import 'package:manzilbook/view/widgets/appbar.dart';
+import 'package:manzilbook/view/widgets/booking_card.dart';
 import 'package:manzilbook/view/widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/place_circle.dart';
 import 'package:manzilbook/view/widgets/upper_textfield.dart';
@@ -56,7 +57,22 @@ class _HomePageState extends ConsumerState<HomePage> {
                       );
                     }),
               ),
-              LabelRow(label: 'Beauty procedures')
+              LabelRow(label: 'Beauty procedures'),
+              SizedBox(
+                height: h * 0.4,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return BookingCard(
+                        category: 'Dentistry',
+                        distance: 2.5,
+                        placeName: 'Dolce',
+                        rating: 4.8,
+                        reviewCount: 120,
+                      );
+                    }),
+              ),
             ],
           ),
         ),
