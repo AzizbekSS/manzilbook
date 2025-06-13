@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 
 import '../../helper/util/padding/app_padding.dart';
 
@@ -41,10 +42,7 @@ class MyAppBar extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
-              Icons.notifications,
-              color: Theme.of(context).colorScheme.secondary,
-            ),
+            icon: HugeIcon(icon: HugeIcons.strokeRoundedNotification02, color: Theme.of(context).colorScheme.secondary,)
           ),
         ],
       );
