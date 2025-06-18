@@ -1,5 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
+import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/view/widgets/bottomsheet.dart';
+import 'package:manzilbook/view/widgets/button.dart';
 
 class PlacePage extends StatefulWidget {
   const PlacePage({super.key});
@@ -9,17 +13,7 @@ class PlacePage extends StatefulWidget {
 }
 
 class _PlacePageState extends State<PlacePage> {
-
-int _currentIndex=0; 
-int indeks=0;
-bool isCurrentIndex(int index){
-  if(index==_currentIndex){
-    return true;
-  }else{
-    return false;
-  }
-}
- 
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -68,10 +62,9 @@ bool isCurrentIndex(int index){
                           ),
                         ],
                         options: CarouselOptions(
-                          onPageChanged: ((index,reason){
+                          onPageChanged: ((index, reason) {
                             setState(() {
-                              _currentIndex=index;
-                              _currentIndex=indeks;
+                              _currentIndex = index;
                             });
                           }),
                           viewportFraction: 1,
@@ -88,17 +81,68 @@ bool isCurrentIndex(int index){
                 ],
               ),
               Container(
+                padding: Dis.only(lr: 5, tb: 8),
                 height: h * 0.65,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.red,
-                      borderRadius: BorderRadius.only(
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
                   ),
-              
                 ),
-           
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/images/save.png',
+                        height: 50,
+                      ),
+                      title: Text(
+                        'Dolce',
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.surface,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
+                      ),
+                      subtitle: Text('Dentist • Yunosobod'),
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Button(
+                          h: h * 0.06,
+                          onTap: () {},
+                          w: w * 0.75,
+                          child: Text(
+                            'Book',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,),
+                          ),
+                        ),
+                        SizedBox(
+                          width: w * 0.02,
+                        ),
+                        Button(
+                          h: h * 0.06,
+                          onTap: () {
+                            showModalBottomSheet(context: context, builder: (context){
+                              return MyBottomsheet();
+                            });
+                          },
+                          w: w * 0.2,
+                          child: HugeIcon(
+                              icon: HugeIcons.strokeRoundedMore02,
+                              color: Colors.white,
+                            ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ],
           ),

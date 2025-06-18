@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:manzilbook/view/theme/color.dart';
+
+class Button extends StatelessWidget {
+  final double h;
+  final double w;
+  final Widget child;
+  final void Function() onTap;
+
+  const Button({
+    super.key,
+    required this.child,
+    required this.h,
+    required this.onTap,
+    required this.w,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: h,
+        width: w,
+        decoration: BoxDecoration(
+          color: mainColor,
+          borderRadius: BorderRadius.circular(15),
+      
+        ),
+        child: Center(child: child),
+        
+      ),
+    );
+  }
+}
