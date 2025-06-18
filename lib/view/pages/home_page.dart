@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/view/pages/place_page.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
 import 'package:manzilbook/view/widgets/appbar.dart';
 import 'package:manzilbook/view/widgets/booking_card.dart';
 import 'package:manzilbook/view/widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/place_circle.dart';
 import 'package:manzilbook/view/widgets/upper_textfield.dart';
+
 
 class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
@@ -70,6 +73,9 @@ class _HomePageState extends ConsumerState<HomePage> {
                         placeName: 'Dolce',
                         rating: 4.8,
                         reviewCount: 120,
+                        onTap: () {
+                        animateRoute(PlacePage(),context);
+                        },
                       );
                     }),
               ),
