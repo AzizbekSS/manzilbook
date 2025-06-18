@@ -7,7 +7,7 @@ final lightTheme=ThemeData(
     primary: Colors.grey,
     secondary: Colors.black,
     surface: Colors.black,
-    onPrimary:  Colors.grey.shade200),
+    onPrimary:  Colors.grey.shade200,),
   );
 
 
@@ -20,5 +20,5 @@ final darkTheme=ThemeData(
     primary: Colors.grey,
     secondary: Colors.white30,
     surface: Colors.white,
-    onPrimary: Colors.grey.shade700),
+    onPrimary: Colors.grey.shade700,),
   );
