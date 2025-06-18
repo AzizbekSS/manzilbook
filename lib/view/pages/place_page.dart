@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/view/widgets/app_list_tile.dart';
 import 'package:manzilbook/view/widgets/bottomsheet.dart';
 import 'package:manzilbook/view/widgets/button.dart';
 
@@ -93,7 +94,7 @@ class _PlacePageState extends State<PlacePage> {
                 ),
                 child: Column(
                   children: [
-                    ListTile(
+                    MyListTile(
                       leading: Image.asset(
                         'assets/images/save.png',
                         height: 50,
