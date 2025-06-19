@@ -1,10 +1,15 @@
+import 'dart:developer';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/view/theme/color.dart';
 import 'package:manzilbook/view/widgets/app_list_tile.dart';
 import 'package:manzilbook/view/widgets/bottomsheet.dart';
 import 'package:manzilbook/view/widgets/button.dart';
+import 'package:manzilbook/view/widgets/label_row.dart';
+import 'package:manzilbook/view/widgets/service_card.dart';
 
 class PlacePage extends StatefulWidget {
   const PlacePage({super.key});
@@ -14,7 +19,7 @@ class PlacePage extends StatefulWidget {
 }
 
 class _PlacePageState extends State<PlacePage> {
-  int _currentIndex = 0;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class _PlacePageState extends State<PlacePage> {
     final w = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Theme.of(context).primaryColor,
         body: SizedBox(
           height: double.infinity,
           width: double.infinity,
@@ -63,11 +68,6 @@ class _PlacePageState extends State<PlacePage> {
                           ),
                         ],
                         options: CarouselOptions(
-                          onPageChanged: ((index, reason) {
-                            setState(() {
-                              _currentIndex = index;
-                            });
-                          }),
                           viewportFraction: 1,
                           aspectRatio: 9 / 16,
                           autoPlay: true,
@@ -92,57 +92,131 @@ class _PlacePageState extends State<PlacePage> {
                     topRight: Radius.circular(30),
                   ),
                 ),
-                child: Column(
-                  children: [
-                    MyListTile(
-                      leading: Image.asset(
-                        'assets/images/save.png',
-                        height: 50,
-                      ),
-                      title: Text(
-                        'Dolce',
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.surface,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      MyListTile(
+                        leading: Image.asset(
+                          'assets/images/save.png',
+                          height: 50,
                         ),
-                      ),
-                      subtitle: Text('Dentist • Yunosobod'),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Button(
-                          h: h * 0.06,
-                          onTap: () {},
-                          w: w * 0.75,
-                          child: Text(
-                            'Book',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,),
+                        title: Text(
+                          'Dolce',
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.surface,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 24,
                           ),
                         ),
-                        SizedBox(
-                          width: w * 0.02,
-                        ),
-                        Button(
-                          h: h * 0.06,
-                          onTap: () {
-                            showModalBottomSheet(context: context, builder: (context){
-                              return MyBottomsheet();
-                            });
-                          },
-                          w: w * 0.2,
-                          child: HugeIcon(
+                        subtitle: Text('Dentist • Yunosobod'),
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Button(
+                            h: h * 0.06,
+                            onTap: () {},
+                            w: w * 0.75,
+                            child: Text(
+                              'Book',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: w * 0.02,
+                          ),
+                          Button(
+                            h: h * 0.06,
+                            onTap: () {
+                              showModalBottomSheet(
+                                  context: context,
+                                  builder: (context) {
+                                    return MyBottomsheet();
+                                  });
+                            },
+                            w: w * 0.2,
+                            child: HugeIcon(
                               icon: HugeIcons.strokeRoundedMore02,
                               color: Colors.white,
                             ),
-                        ),
-                      ],
-                    )
-                  ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                    height: h*.02 ,  
+                    ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'OPEN ',
+                                  style: TextStyle(
+                                    color: mainColor,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: '• From 9AM to 8PM',
+                                  style: TextStyle(
+                                    color: Theme.of(context).colorScheme.surface,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: 'Distance: ',
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                                ),
+                                TextSpan(
+                                  text: '3.4 km',
+                                  style: TextStyle(
+                                    color: mainColor,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                        SizedBox(
+                    height: h*.01 ,  
+                    ),
+                    LabelRow(label: 'Products and Service'),
+                      SizedBox(
+                    height: h*.01 ,  
+                    ),
+                    SizedBox(
+                      height: h*.4,
+                      child: ListView.builder(
+                        itemCount: 5,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context,index){
+                        return ServiceCard(price: 500000, serviceName: 'Tooth Extraction');
+                      }),
+                    ),
+                    ],
+                  ),
                 ),
               ),
             ],

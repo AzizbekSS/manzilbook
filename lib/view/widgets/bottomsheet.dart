@@ -12,7 +12,7 @@ class MyBottomsheet extends StatelessWidget {
     return Container(
       height: h*0.4,
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).colorScheme.onPrimary,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(20),
           topRight: Radius.circular(20),
