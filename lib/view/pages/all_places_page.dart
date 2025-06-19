@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
 import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/view/widgets/category_tile.dart';
 
 class AllPlacesPage extends StatefulWidget {
   const AllPlacesPage({super.key});
@@ -68,6 +69,18 @@ class _AllPlacesPageState extends State<AllPlacesPage> {
                   ),
                 ],
               )
+          
+         ,
+
+         SizedBox(
+          height: h*.02,
+         ),
+          CategoryTile(),
+          CategoryTile(),
+          CategoryTile(),
+          CategoryTile(),
+          CategoryTile(),
+          
             ],
           ),
         ),

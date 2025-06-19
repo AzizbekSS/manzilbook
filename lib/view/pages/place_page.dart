@@ -6,6 +6,7 @@ import 'package:manzilbook/view/theme/color.dart';
 import 'package:manzilbook/view/widgets/app_list_tile.dart';
 import 'package:manzilbook/view/widgets/bottomsheet.dart';
 import 'package:manzilbook/view/widgets/button.dart';
+import 'package:manzilbook/view/widgets/comment.dart';
 import 'package:manzilbook/view/widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/service_card.dart';
 
@@ -218,6 +219,34 @@ class _PlacePageState extends State<PlacePage> {
                               );
                             }),
                       ),
+                      ListTile(
+                        leading: Text(
+                          '4.5',
+                          style: TextStyle(
+                              fontSize: 35, fontWeight: FontWeight.bold),
+                        ),
+                        title: Row(
+                          children: [
+                            Icon(Icons.star,color: Colors.amber,size: 18,),
+                            Icon(Icons.star,color: Colors.amber,size: 20,),
+                            Icon(Icons.star,color: Colors.amber,size: 24,),
+                            Icon(Icons.star,color: Colors.amber,size: 25,),
+                            Icon(Icons.star,color: Colors.amber,size:26),
+                          ],
+                        ),
+                        subtitle: Text('16 reviews',style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
+                        ),),
+                      ),
+
+                      SizedBox(
+                        height: h*.03,
+                      ),
+                      Comment(),
+                      Comment(),
+                      Comment(),
+                      Comment(),
+                      Comment(),
                     ],
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:manzilbook/view/pages/place_page.dart';
 import 'package:manzilbook/view/theme/theme.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends ConsumerWidget {
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const HomePage(),
+      home: const PlacePage(),
     );
   }
 }
