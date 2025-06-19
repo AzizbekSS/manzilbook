@@ -4,9 +4,11 @@ import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/color.dart';
 import 'package:manzilbook/view/widgets/app_list_tile.dart';
+import 'package:manzilbook/view/widgets/booking_card.dart';
 import 'package:manzilbook/view/widgets/bottomsheet.dart';
 import 'package:manzilbook/view/widgets/button.dart';
 import 'package:manzilbook/view/widgets/comment.dart';
+import 'package:manzilbook/view/widgets/contact_tile.dart';
 import 'package:manzilbook/view/widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/service_card.dart';
 
@@ -227,26 +229,114 @@ class _PlacePageState extends State<PlacePage> {
                         ),
                         title: Row(
                           children: [
-                            Icon(Icons.star,color: Colors.amber,size: 18,),
-                            Icon(Icons.star,color: Colors.amber,size: 20,),
-                            Icon(Icons.star,color: Colors.amber,size: 24,),
-                            Icon(Icons.star,color: Colors.amber,size: 25,),
-                            Icon(Icons.star,color: Colors.amber,size:26),
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 18,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 20,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 24,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Colors.amber,
+                              size: 25,
+                            ),
+                            Icon(Icons.star, color: Colors.amber, size: 26),
                           ],
                         ),
-                        subtitle: Text('16 reviews',style: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
-                        ),),
+                        subtitle: Text(
+                          '16 reviews',
+                          style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                        ),
                       ),
-
                       SizedBox(
-                        height: h*.03,
+                        height: h * .03,
                       ),
                       Comment(),
                       Comment(),
                       Comment(),
                       Comment(),
                       Comment(),
+                      SizedBox(
+                        height: h * .03,
+                      ),
+                      LabelRow(label: 'Similar places'),
+                      SizedBox(
+                        height: h * .02,
+                      ),
+                      SizedBox(
+                        height: h * .4,
+                        child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemCount: 6,
+                            itemBuilder: (context, index) {
+                              return BookingCard(
+                                category: 'Dentist',
+                                distance: 5,
+                                placeName: 'Holaa',
+                                rating: 4,
+                                reviewCount: 23,
+                                onTap: () {},
+                              );
+                            }),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Contacts',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      ContactTile(
+                        leadingIcon: HugeIcon(
+                            icon: HugeIcons.strokeRoundedSmartPhone01,
+                            color: Theme.of(context).colorScheme.primary),
+                        onTap: () {},
+                        title: 'Social Media',
+                      ),
+                      ContactTile(
+                        leadingIcon: HugeIcon(
+                            icon: HugeIcons.strokeRoundedSmartPhone01,
+                            color: Theme.of(context).colorScheme.primary),
+                        onTap: () {},
+                        title: 'Social Media',
+                      ),
+                      ContactTile(
+                        leadingIcon: HugeIcon(
+                            icon: HugeIcons.strokeRoundedSmartPhone01,
+                            color: Theme.of(context).colorScheme.primary),
+                        onTap: () {},
+                        title: 'Social Media',
+                      ),
+                      ContactTile(
+                        leadingIcon: HugeIcon(
+                            icon: HugeIcons.strokeRoundedSmartPhone01,
+                            color: Theme.of(context).colorScheme.primary),
+                        onTap: () {},
+                        title: 'Social Media',
+                      ),
+                      ContactTile(
+                        leadingIcon: HugeIcon(
+                            icon: HugeIcons.strokeRoundedSmartPhone01,
+                            color: Theme.of(context).colorScheme.primary),
+                        onTap: () {},
+                        title: 'Social Media',
+                      ),
                     ],
                   ),
                 ),
