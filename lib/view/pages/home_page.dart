@@ -74,7 +74,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                         rating: 4.8,
                         reviewCount: 120,
                         onTap: () {
-                        animateRoute(PlacePage(),context);
+                        animateBottomTop(PlacePage(),context);
                         },
                       );
                     }),

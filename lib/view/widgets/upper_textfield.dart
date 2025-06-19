@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/view/pages/all_places_page.dart';
 
 class UpperTextfield extends StatelessWidget {
   const UpperTextfield({super.key});
@@ -7,6 +9,7 @@ class UpperTextfield extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onTap: ()=>animateRightLeft(AllPlacesPage(), context),
       textAlign: TextAlign.center,
       readOnly: true,
       decoration: InputDecoration(

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -19,8 +17,6 @@ class PlacePage extends StatefulWidget {
 }
 
 class _PlacePageState extends State<PlacePage> {
-  
-
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
@@ -110,6 +106,9 @@ class _PlacePageState extends State<PlacePage> {
                         ),
                         subtitle: Text('Dentist • Yunosobod'),
                       ),
+                      SizedBox(
+                        height: h * .03,
+                      ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -147,8 +146,8 @@ class _PlacePageState extends State<PlacePage> {
                         ],
                       ),
                       SizedBox(
-                    height: h*.02 ,  
-                    ),
+                        height: h * .03,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -166,7 +165,8 @@ class _PlacePageState extends State<PlacePage> {
                                 TextSpan(
                                   text: '• From 9AM to 8PM',
                                   style: TextStyle(
-                                    color: Theme.of(context).colorScheme.surface,
+                                    color:
+                                        Theme.of(context).colorScheme.surface,
                                     fontSize: 15,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -199,22 +199,25 @@ class _PlacePageState extends State<PlacePage> {
                           ),
                         ],
                       ),
-                        SizedBox(
-                    height: h*.01 ,  
-                    ),
-                    LabelRow(label: 'Products and Service'),
                       SizedBox(
-                    height: h*.01 ,  
-                    ),
-                    SizedBox(
-                      height: h*.4,
-                      child: ListView.builder(
-                        itemCount: 5,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context,index){
-                        return ServiceCard(price: 500000, serviceName: 'Tooth Extraction');
-                      }),
-                    ),
+                        height: h * .03,
+                      ),
+                      LabelRow(label: 'Products and Service'),
+                      SizedBox(
+                        height: h * .03,
+                      ),
+                      SizedBox(
+                        height: h * .4,
+                        child: ListView.builder(
+                            itemCount: 5,
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return ServiceCard(
+                                price: 500000,
+                                serviceName: 'Tooth Extraction',
+                              );
+                            }),
+                      ),
                     ],
                   ),
                 ),
