@@ -9,7 +9,7 @@ class Comment extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-
+          contentPadding: EdgeInsets.symmetric(horizontal: 0),
           leading: CircleAvatar(
             backgroundColor: Colors.blue,
             child:
@@ -52,10 +52,9 @@ class Comment extends StatelessWidget {
         ),
         Text(
             "Guruhdan chiqib 20 mln \$ ishlasa Samarqandan 50 ming muhlis sig'adigan stadium qurush kerak suvni bo'yidan xamma Viloyatga yaqin bo'ladi terma jamoa o'yinlari uchun"),
-
-            SizedBox(
-              height: 12,
-            ),
+        SizedBox(
+          height: 12,
+        ),
       ],
     );
   }

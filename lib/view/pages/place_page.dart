@@ -81,7 +81,10 @@ class _PlacePageState extends State<PlacePage> {
                 ],
               ),
               Container(
-                padding: Dis.only(lr: 5, tb: 8),
+                padding:EdgeInsetsGeometryTween(
+                  begin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  end: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                ).lerp(0.5),
                 height: h * 0.65,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -140,7 +143,7 @@ class _PlacePageState extends State<PlacePage> {
                                     return MyBottomsheet();
                                   });
                             },
-                            w: w * 0.2,
+                            w: w * 0.16,
                             child: HugeIcon(
                               icon: HugeIcons.strokeRoundedMore02,
                               color: Colors.white,

@@ -15,6 +15,7 @@ class ContactTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 0),
       trailing: HugeIcon(
         icon: HugeIcons.strokeRoundedArrowRight01,
         color: Theme.of(context).colorScheme.surface,
