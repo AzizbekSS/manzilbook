@@ -26,7 +26,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     final themeNotifier = ref.read(themeNotifierProvider.notifier);
     final isDark = themeMode == ThemeMode.dark;
     final h = MediaQuery.of(context).size.height;
-    final w = MediaQuery.of(context).size.width;
+    // final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: PreferredSize(

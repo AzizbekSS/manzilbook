@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/color.dart';
 import 'package:manzilbook/view/widgets/app_list_tile.dart';
 import 'package:manzilbook/view/widgets/booking_card.dart';
