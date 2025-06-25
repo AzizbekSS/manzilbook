@@ -1,8 +1,6 @@
-// ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:manzilbook/helper/util/route/animateroute.dart';
-import 'package:manzilbook/view/pages/home_page.dart';
 
 import '../widgets/role_card.dart';
 

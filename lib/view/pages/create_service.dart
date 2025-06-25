@@ -1,0 +1,257 @@
+// ignore_for_file: deprecated_member_use
+
+import 'dart:io';
+
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:manzilbook/view/theme/color.dart';
+
+class CreateServicePage extends StatefulWidget {
+  const CreateServicePage({Key? key}) : super(key: key);
+
+  @override
+  State<CreateServicePage> createState() => _CreateServicePageState();
+}
+
+class _CreateServicePageState extends State<CreateServicePage> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _aboutController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
+  final TextEditingController _contactController = TextEditingController();
+  final TextEditingController _socialController = TextEditingController();
+  final TextEditingController _servicesController = TextEditingController();
+
+  XFile? _logo;
+  List<XFile> _images = [];
+
+  Future<void> _pickLogo() async {
+    final ImagePicker picker = ImagePicker();
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      setState(() {
+        _logo = image;
+      });
+    }
+  }
+
+  Future<void> _pickImages() async {
+    final ImagePicker picker = ImagePicker();
+    final List<XFile>? images = await picker.pickMultiImage();
+    if (images != null && images.isNotEmpty) {
+      setState(() {
+        _images = images;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Scaffold(
+      backgroundColor: theme.primaryColor,
+      appBar: AppBar(
+        title: const Text("Create Service"),
+        backgroundColor: theme.primaryColor,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(20),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: GestureDetector(
+                    onTap: _pickLogo,
+                    child: CircleAvatar(
+                      radius: 48,
+                      backgroundColor: mainColor,
+                      backgroundImage: _logo != null
+                          ? Image.file(
+                              File(_logo!.path),
+                              fit: BoxFit.cover,
+                            ).image
+                          : null,
+                      child: _logo == null
+                          ? Icon(Icons.camera_alt,
+                              size: 36, color: theme.primaryColor)
+                          : null,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                TextFormField(
+                  controller: _nameController,
+                  decoration: InputDecoration(
+                    labelText: "Service nomi",
+                    floatingLabelStyle: TextStyle(color: mainColor),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: mainColor,
+                          width: 1.2,
+                        )),
+                    prefixIcon: const Icon(Icons.business),
+                  ),
+                  validator: (v) =>
+                      v == null || v.isEmpty ? "Nomini kiriting" : null,
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _aboutController,
+                  maxLines: 4,
+                  decoration: InputDecoration(
+                    labelText: "Service haqida to'liq ma'lumot",
+                    floatingLabelStyle: TextStyle(color: mainColor),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: mainColor,
+                          width: 1.2,
+                        )),
+                    prefixIcon: const Icon(Icons.info_outline),
+                  ),
+                  validator: (v) =>
+                      v == null || v.isEmpty ? "Ma'lumot kiriting" : null,
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _addressController,
+                  decoration: InputDecoration(
+                    labelText: "Service manzili",
+                    floatingLabelStyle: TextStyle(color: mainColor),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: mainColor,
+                          width: 1.2,
+                        )),
+                    prefixIcon: const Icon(Icons.location_on),
+                  ),
+                  validator: (v) =>
+                      v == null || v.isEmpty ? "Manzil kiriting" : null,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  "Manzil rasmlari",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 8),
+                SizedBox(
+                  height: 90,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      GestureDetector(
+                        onTap: _pickImages,
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: theme.primaryColor.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Icon(Icons.add_a_photo,
+                              color: theme.primaryColor, size: 32),
+                        ),
+                      ),
+                      ..._images.map((img) => Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 4),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(12),
+                              child: Image.file(
+                                File(img.path),
+                                width: 80,
+                                height: 80,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          )),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _contactController,
+                  decoration: InputDecoration(
+                    labelText: "Aloqa uchun kontaktlar",
+                    floatingLabelStyle: TextStyle(color: mainColor),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: mainColor,
+                          width: 1.2,
+                        )),
+                    prefixIcon: const Icon(Icons.phone),
+                  ),
+                  validator: (v) =>
+                      v == null || v.isEmpty ? "Kontakt kiriting" : null,
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _socialController,
+                  decoration: InputDecoration(
+                    labelText:
+                        "Ijtimoiy tarmoqlari (Instagram, Telegram va boshqalar)",
+                    floatingLabelStyle: TextStyle(color: mainColor),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: mainColor,
+                          width: 1.2,
+                        )),
+                    prefixIcon: const Icon(Icons.alternate_email),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  controller: _servicesController,
+                  maxLines: 2,
+                  decoration: InputDecoration(
+                    labelText: "Qo'shimcha xizmat turlari",
+                    floatingLabelStyle: TextStyle(color: mainColor),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide(
+                          color: mainColor,
+                          width: 1.2,
+                        )),
+                    prefixIcon: const Icon(Icons.miscellaneous_services),
+                  ),
+                ),
+                const SizedBox(height: 28),
+                Center(
+                  child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 16),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      backgroundColor: mainColor
+                    ),
+                    icon: const Icon(Icons.check_circle_outline,color: Colors.white,),
+                    label: const Text(
+                      "Saqlash",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState?.validate() ?? false) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text("Service saqlandi!")),
+                        );
+                      }
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -5,6 +5,8 @@ import 'package:manzilbook/view/pages/home_page.dart';
 import 'package:manzilbook/view/theme/theme.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
 
+import 'view/pages/create_service.dart';
+
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
@@ -22,7 +24,7 @@ class MyApp extends ConsumerWidget {
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home:  ChooseRolePage(),
+      home:  CreateServicePage(),
       routes: {
         HomePage.routeName:(context)=>const HomePage(),
       },
