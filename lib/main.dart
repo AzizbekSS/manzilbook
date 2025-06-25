@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:manzilbook/view/pages/notification_page.dart';
+import 'package:manzilbook/view/pages/choose_role_page.dart';
+import 'package:manzilbook/view/pages/home_page.dart';
 import 'package:manzilbook/view/theme/theme.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
 
-import 'view/pages/home_page.dart';
 
 void main() {
   runApp(ProviderScope(child: const MyApp()));
@@ -22,7 +22,10 @@ class MyApp extends ConsumerWidget {
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const NotificationPage(),
+      home:  ChooseRolePage(),
+      routes: {
+        HomePage.routeName:(context)=>const HomePage(),
+      },
     );
   }
 }

@@ -21,6 +21,11 @@ void animateRightLeft(Widget child,BuildContext context){
 }
 
 
+void animateRightLeftNamed(String child, BuildContext context){
+ context.pushNamedTransition(routeName: child, type: PageTransitionType.rightToLeft);
+}
+
+
 void goBack(BuildContext context){
   Navigator.pop(context);
 }

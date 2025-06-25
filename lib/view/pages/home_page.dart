@@ -13,6 +13,7 @@ import 'package:manzilbook/view/widgets/upper_textfield.dart';
 
 
 class HomePage extends ConsumerStatefulWidget {
+static const String routeName='homepage';
   const HomePage({super.key});
 
   @override
