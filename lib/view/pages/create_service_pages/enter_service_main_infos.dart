@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:manzilbook/helper/util/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/color.dart';
@@ -19,8 +20,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _aboutController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
-  final TextEditingController _contactController = TextEditingController();
-  final TextEditingController _socialController = TextEditingController();
+
   final TextEditingController _servicesController = TextEditingController();
 
   XFile? _logo;
@@ -49,10 +49,9 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final h=MediaQuery.of(context).size.height;
+    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: theme.primaryColor,
-  
       body: SafeArea(
         child: SingleChildScrollView(
           padding: Dis.only(lr: 8, tb: 10),
@@ -61,12 +60,15 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-          Text('Chooser your logo',style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),),
-          SizedBox(
-            height: h*.02,
-          ),
+                Text(
+                  'Chooser your logo',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(
+                  height: h * .02,
+                ),
                 Center(
                   child: GestureDetector(
                     onTap: _pickLogo,
@@ -86,7 +88,9 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     ),
                   ),
                 ),
-                 SizedBox(height: h*.02,),
+                SizedBox(
+                  height: h * .02,
+                ),
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
@@ -94,20 +98,22 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     labelStyle: TextStyle(color: theme.colorScheme.primary),
                     floatingLabelStyle: TextStyle(color: mainColor),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: mainColor,
-                          width: 1.2,
-                        ),),
-                      
-                    prefixIcon: const Icon(Icons.business),
-                    prefixIconColor: theme.colorScheme.primary
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(
+                        color: mainColor,
+                        width: 1.2,
+                      ),
+                    ),
+                    prefixIcon: HugeIcon(
+                        icon: HugeIcons.strokeRoundedWhatsappBusiness,
+                        color: theme.colorScheme.primary),
                   ),
                   validator: (v) =>
                       v == null || v.isEmpty ? "Nomini kiriting" : null,
                 ),
-
-                 SizedBox(height: h*.03,),
+                SizedBox(
+                  height: h * .03,
+                ),
                 TextFormField(
                   controller: _aboutController,
                   maxLines: 4,
@@ -116,18 +122,22 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     floatingLabelStyle: TextStyle(color: mainColor),
                     labelStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: mainColor,
-                          width: 1.2,
-                        ),),
-                    prefixIcon: const Icon(Icons.info_outline),
-                    prefixIconColor: theme.colorScheme.primary
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(
+                        color: mainColor,
+                        width: 1.2,
+                      ),
+                    ),
+                    prefixIcon: HugeIcon(
+                        icon: HugeIcons.strokeRoundedInformationSquare,
+                        color: theme.colorScheme.primary),
                   ),
                   validator: (v) =>
                       v == null || v.isEmpty ? "Ma'lumot kiriting" : null,
                 ),
-                SizedBox(height: h*.03,),
+                SizedBox(
+                  height: h * .03,
+                ),
                 TextFormField(
                   controller: _addressController,
                   decoration: InputDecoration(
@@ -135,13 +145,15 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     floatingLabelStyle: TextStyle(color: mainColor),
                     labelStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: mainColor,
-                          width: 1.2,
-                        ),),
-                    prefixIcon: const Icon(Icons.location_on),
-                    prefixIconColor: theme.colorScheme.primary
+                      borderRadius: BorderRadius.circular(12),
+                      borderSide: BorderSide(
+                        color: mainColor,
+                        width: 1.2,
+                      ),
+                    ),
+                    prefixIcon: HugeIcon(
+                        icon: HugeIcons.strokeRoundedLocation01,
+                        color: theme.colorScheme.primary),
                   ),
                   validator: (v) =>
                       v == null || v.isEmpty ? "Manzil kiriting" : null,
@@ -186,7 +198,6 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                   ),
                 ),
                 const SizedBox(height: 16),
-               
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _servicesController,
@@ -207,18 +218,22 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                 Center(
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 40, vertical: 16),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      backgroundColor: mainColor
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 40, vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
+                        backgroundColor: mainColor),
+                    icon: const Icon(
+                      Icons.check_circle_outline,
+                      color: Colors.white,
                     ),
-                    icon: const Icon(Icons.check_circle_outline,color: Colors.white,),
                     label: const Text(
                       "Saqlash",
-                      style:
-                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold,color: Colors.white),
+                      style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
