@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manzilbook/view/widgets/timelinetile.dart';
+import 'package:manzilbook/view/widgets/create_service_widgets/timelinetile.dart';
 
 class CreateTileRow extends StatelessWidget {
 

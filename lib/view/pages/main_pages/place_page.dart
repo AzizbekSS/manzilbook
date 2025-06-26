@@ -2,14 +2,14 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/view/theme/color.dart';
-import 'package:manzilbook/view/widgets/app_list_tile.dart';
-import 'package:manzilbook/view/widgets/booking_card.dart';
-import 'package:manzilbook/view/widgets/bottomsheet.dart';
-import 'package:manzilbook/view/widgets/button.dart';
-import 'package:manzilbook/view/widgets/comment.dart';
-import 'package:manzilbook/view/widgets/contact_tile.dart';
-import 'package:manzilbook/view/widgets/label_row.dart';
-import 'package:manzilbook/view/widgets/service_card.dart';
+import 'package:manzilbook/view/widgets/booking_widgets/app_list_tile.dart';
+import 'package:manzilbook/view/widgets/booking_widgets/booking_card.dart';
+import 'package:manzilbook/view/widgets/booking_widgets/bottomsheet.dart';
+import 'package:manzilbook/view/widgets/app_widgets/button.dart';
+import 'package:manzilbook/view/widgets/card_widgets/comment.dart';
+import 'package:manzilbook/view/widgets/card_widgets/contact_tile.dart';
+import 'package:manzilbook/view/widgets/app_widgets/label_row.dart';
+import 'package:manzilbook/view/widgets/create_service_widgets/service_card.dart';
 
 class PlacePage extends StatefulWidget {
   const PlacePage({super.key});

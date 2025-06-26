@@ -4,7 +4,7 @@ import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/pages/create_service_pages/createserver.dart';
 import 'package:manzilbook/view/pages/main_pages/home_page.dart';
 
-import '../../widgets/role_card.dart';
+import '../../widgets/create_service_widgets/role_card.dart';
 
 class ChooseRolePage extends StatelessWidget {
   

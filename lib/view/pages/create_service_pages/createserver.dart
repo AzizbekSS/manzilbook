@@ -7,6 +7,7 @@ import 'package:manzilbook/view/pages/create_service_pages/enter_service_main_in
 import 'package:manzilbook/view/pages/create_service_pages/other_services.dart';
 import 'package:manzilbook/view/pages/main_pages/home_page.dart';
 import 'package:manzilbook/view/theme/color.dart';
+import 'package:manzilbook/view/widgets/app_widgets/button.dart';
 
 class CreateServer extends StatefulWidget {
   const CreateServer({super.key});
@@ -95,14 +96,14 @@ class CreateServerState extends State<CreateServer> {
                       child: Text('Previous',
                           style: TextStyle(
                             color: mainColor,
-                            fontWeight: FontWeight.bold,
+                            
                           )),
                     ),
                   ),
                 ),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: mainColor),
-                    onPressed: () {
+                Button(
+                    h: h * 0.044,
+                    onTap: () {
                       if (initialIndex == 0) {
                         controller.animateToPage(1,
                             duration: Duration(milliseconds: 200),
@@ -121,12 +122,8 @@ class CreateServerState extends State<CreateServer> {
                         animateRightLeft(HomePage(), context);
                       }
                     },
-                    child: Text(
-                      'Next',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    )),
+                    w: w * 0.157,
+                    child: Text("Next",style: TextStyle(color: Colors.white),))
               ],
             )
           ])),

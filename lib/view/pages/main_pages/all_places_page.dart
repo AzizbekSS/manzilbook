@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/padding/app_padding.dart';
 import 'package:manzilbook/helper/route/animateroute.dart';
-import 'package:manzilbook/view/widgets/category_tile.dart';
+import 'package:manzilbook/view/widgets/home_widgets/category_tile.dart';
 
 class AllPlacesPage extends StatefulWidget {
   const AllPlacesPage({super.key});

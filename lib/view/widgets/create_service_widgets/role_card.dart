@@ -1,4 +1,3 @@
-
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
@@ -21,15 +20,15 @@ class RoleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final h=MediaQuery.of(context).size.height;
-    final w=MediaQuery.of(context).size.width;
+    final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: h*0.22,
-        width: w*0.7,
+        height: h * 0.22,
+        width: w * 0.7,
         margin: const EdgeInsets.symmetric(horizontal: 8),
-        padding: Dis.only(lr: 10,tb: 10),
+        padding: Dis.only(lr: 10, tb: 10),
         decoration: BoxDecoration(
           color: color.withOpacity(0.1),
           borderRadius: BorderRadius.circular(20),
@@ -51,7 +50,7 @@ class RoleCard extends StatelessWidget {
               radius: 32,
               child: Icon(icon, size: 36, color: Colors.white),
             ),
-             SizedBox(height: h*.01),
+            SizedBox(height: h * .01),
             Text(
               title,
               style: TextStyle(
@@ -59,7 +58,7 @@ class RoleCard extends StatelessWidget {
                 color: color,
               ),
             ),
-             SizedBox(height: h*.01),
+            SizedBox(height: h * .01),
             Text(
               description,
               textAlign: TextAlign.center,
