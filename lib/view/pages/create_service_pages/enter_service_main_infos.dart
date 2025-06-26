@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:manzilbook/view/theme/color.dart';
 
-class CreateServicePage extends StatefulWidget {
-  const CreateServicePage({Key? key}) : super(key: key);
+class EnterServiceMainInfos extends StatefulWidget {
+  const EnterServiceMainInfos({super.key});
 
   @override
-  State<CreateServicePage> createState() => _CreateServicePageState();
+  State<EnterServiceMainInfos> createState() => _EnterServiceMainInfosState();
 }
 
-class _CreateServicePageState extends State<CreateServicePage> {
+class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _aboutController = TextEditingController();
@@ -50,10 +50,7 @@ class _CreateServicePageState extends State<CreateServicePage> {
     final theme = Theme.of(context);
     return Scaffold(
       backgroundColor: theme.primaryColor,
-      appBar: AppBar(
-        title: const Text("Create Service"),
-        backgroundColor: theme.primaryColor,
-      ),
+  
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
@@ -62,6 +59,7 @@ class _CreateServicePageState extends State<CreateServicePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+          
                 Center(
                   child: GestureDetector(
                     onTap: _pickLogo,

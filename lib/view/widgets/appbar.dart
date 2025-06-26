@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:manzilbook/view/pages/notification_page.dart';
+import 'package:manzilbook/view/pages/main_pages/notification_page.dart';
 
 import '../../helper/util/padding/app_padding.dart';
 import '../../helper/util/route/animateroute.dart';

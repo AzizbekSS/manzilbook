@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:manzilbook/helper/util/route/animateroute.dart';
 
-import '../widgets/role_card.dart';
+import '../../widgets/role_card.dart';
 
 class ChooseRolePage extends StatelessWidget {
   
