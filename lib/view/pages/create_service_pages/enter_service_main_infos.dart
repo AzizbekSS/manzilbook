@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:manzilbook/helper/util/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/color.dart';
 
 class EnterServiceMainInfos extends StatefulWidget {
@@ -48,18 +49,24 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final h=MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: theme.primaryColor,
   
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: Dis.only(lr: 8, tb: 10),
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-          
+          Text('Chooser your logo',style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),),
+          SizedBox(
+            height: h*.02,
+          ),
                 Center(
                   child: GestureDetector(
                     onTap: _pickLogo,
@@ -79,54 +86,62 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                 SizedBox(height: h*.02,),
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
                     labelText: "Service nomi",
+                    labelStyle: TextStyle(color: theme.colorScheme.primary),
                     floatingLabelStyle: TextStyle(color: mainColor),
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide(
                           color: mainColor,
                           width: 1.2,
-                        )),
+                        ),),
+                      
                     prefixIcon: const Icon(Icons.business),
+                    prefixIconColor: theme.colorScheme.primary
                   ),
                   validator: (v) =>
                       v == null || v.isEmpty ? "Nomini kiriting" : null,
                 ),
-                const SizedBox(height: 16),
+
+                 SizedBox(height: h*.03,),
                 TextFormField(
                   controller: _aboutController,
                   maxLines: 4,
                   decoration: InputDecoration(
                     labelText: "Service haqida to'liq ma'lumot",
                     floatingLabelStyle: TextStyle(color: mainColor),
+                    labelStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide(
                           color: mainColor,
                           width: 1.2,
-                        )),
+                        ),),
                     prefixIcon: const Icon(Icons.info_outline),
+                    prefixIconColor: theme.colorScheme.primary
                   ),
                   validator: (v) =>
                       v == null || v.isEmpty ? "Ma'lumot kiriting" : null,
                 ),
-                const SizedBox(height: 16),
+                SizedBox(height: h*.03,),
                 TextFormField(
                   controller: _addressController,
                   decoration: InputDecoration(
                     labelText: "Service manzili",
                     floatingLabelStyle: TextStyle(color: mainColor),
+                    labelStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide(
                           color: mainColor,
                           width: 1.2,
-                        )),
+                        ),),
                     prefixIcon: const Icon(Icons.location_on),
+                    prefixIconColor: theme.colorScheme.primary
                   ),
                   validator: (v) =>
                       v == null || v.isEmpty ? "Manzil kiriting" : null,
@@ -171,38 +186,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                TextFormField(
-                  controller: _contactController,
-                  decoration: InputDecoration(
-                    labelText: "Aloqa uchun kontaktlar",
-                    floatingLabelStyle: TextStyle(color: mainColor),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: mainColor,
-                          width: 1.2,
-                        )),
-                    prefixIcon: const Icon(Icons.phone),
-                  ),
-                  validator: (v) =>
-                      v == null || v.isEmpty ? "Kontakt kiriting" : null,
-                ),
-                const SizedBox(height: 16),
-                TextFormField(
-                  controller: _socialController,
-                  decoration: InputDecoration(
-                    labelText:
-                        "Ijtimoiy tarmoqlari (Instagram, Telegram va boshqalar)",
-                    floatingLabelStyle: TextStyle(color: mainColor),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: mainColor,
-                          width: 1.2,
-                        )),
-                    prefixIcon: const Icon(Icons.alternate_email),
-                  ),
-                ),
+               
                 const SizedBox(height: 16),
                 TextFormField(
                   controller: _servicesController,

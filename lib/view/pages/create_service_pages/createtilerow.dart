@@ -7,9 +7,8 @@ class CreateTileRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final h=MediaQuery.of(context).size.height;
-    return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
-      body: SizedBox(
+    return 
+       SizedBox(
         height: h*.07,
         width: double.maxFinite,
         child: Row(
@@ -34,7 +33,6 @@ class CreateTileRow extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
   }
 }
