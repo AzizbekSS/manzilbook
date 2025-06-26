@@ -21,7 +21,6 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   final TextEditingController _aboutController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
 
-  final TextEditingController _servicesController = TextEditingController();
 
   XFile? _logo;
   List<XFile> _images = [];
@@ -158,7 +157,9 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                   validator: (v) =>
                       v == null || v.isEmpty ? "Manzil kiriting" : null,
                 ),
-                const SizedBox(height: 16),
+                  SizedBox(
+                  height: h * .03,
+                ),
                 Text(
                   "Manzil rasmlari",
                   style: TextStyle(fontWeight: FontWeight.bold),
@@ -175,11 +176,10 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                           width: 80,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: theme.primaryColor.withOpacity(0.1),
+                            color: theme.colorScheme.surface.withOpacity(0.3),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Icon(Icons.add_a_photo,
-                              color: theme.primaryColor, size: 32),
+                          child: HugeIcon(icon: HugeIcons.strokeRoundedImageUpload  , color:theme.primaryColor,size: 26, ),
                         ),
                       ),
                       ..._images.map((img) => Padding(
@@ -197,24 +197,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     ],
                   ),
                 ),
-                const SizedBox(height: 16),
-                const SizedBox(height: 16),
-                TextFormField(
-                  controller: _servicesController,
-                  maxLines: 2,
-                  decoration: InputDecoration(
-                    labelText: "Qo'shimcha xizmat turlari",
-                    floatingLabelStyle: TextStyle(color: mainColor),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(
-                          color: mainColor,
-                          width: 1.2,
-                        )),
-                    prefixIcon: const Icon(Icons.miscellaneous_services),
-                  ),
-                ),
-                const SizedBox(height: 28),
+          
                 Center(
                   child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
@@ -236,11 +219,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                           color: Colors.white),
                     ),
                     onPressed: () {
-                      if (_formKey.currentState?.validate() ?? false) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Service saqlandi!")),
-                        );
-                      }
+                   
                     },
                   ),
                 ),

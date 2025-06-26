@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/view/pages/create_service_pages/createserver.dart';
+import 'package:manzilbook/view/pages/main_pages/home_page.dart';
 
 import '../../widgets/role_card.dart';
 
@@ -37,6 +39,7 @@ class ChooseRolePage extends StatelessWidget {
                 description: "List your products and manage your store.",
                 color: Colors.orange.shade400,
                 onTap: () {
+                  animateRightLeft(CreateServer(), context);
                 },
               ),
               SizedBox(
@@ -48,7 +51,7 @@ class ChooseRolePage extends StatelessWidget {
                 description: "Browse and buy products easily.",
                 color: Colors.green.shade400,
                 onTap: () {
-                  animateRightLeftNamed('homepage', context);
+                  animateRightLeft(HomePage(), context);
                 },
               ),
             ],

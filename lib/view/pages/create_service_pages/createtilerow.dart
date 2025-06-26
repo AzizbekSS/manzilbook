@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:manzilbook/view/widgets/timelinetile.dart';
 
 class CreateTileRow extends StatelessWidget {
-  const CreateTileRow({super.key});
+
+  final bool isFirstPast;
+  final bool isSecondPast;
+  final bool isLastPasat;
+  const CreateTileRow({super.key,
+   required this.isFirstPast,
+   required this.isSecondPast,
+   required this.isLastPasat
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,17 +27,17 @@ class CreateTileRow extends StatelessWidget {
             MyTimelineTile(
               isFirst: true,
               isLast: false,
-              isPast: true,
+              isPast: isFirstPast,
             ),
             MyTimelineTile(
               isFirst: false,
               isLast: false,
-              isPast: true,
+              isPast: isSecondPast,
             ),
             MyTimelineTile(
               isFirst: false,
               isLast: true,
-              isPast: false,
+              isPast: isLastPasat,
             ),
           ],
         ),
