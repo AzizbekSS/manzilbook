@@ -5,7 +5,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/color.dart';
 
 class EnterServiceMainInfos extends StatefulWidget {

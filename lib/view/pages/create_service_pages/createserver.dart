@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
-import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/pages/create_service_pages/contacts_page.dart';
 import 'package:manzilbook/view/pages/create_service_pages/createtilerow.dart';
 import 'package:manzilbook/view/pages/create_service_pages/enter_service_main_infos.dart';

@@ -2,7 +2,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
 
 class RoleCard extends StatelessWidget {
   final IconData icon;

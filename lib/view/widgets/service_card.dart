@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
 
 class ServiceCard extends StatelessWidget {
   final String serviceName;

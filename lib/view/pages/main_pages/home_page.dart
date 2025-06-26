@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
-import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/pages/main_pages/place_page.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
 import 'package:manzilbook/view/widgets/appbar.dart';

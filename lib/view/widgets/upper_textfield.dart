@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/pages/main_pages/all_places_page.dart';
 
 class UpperTextfield extends StatelessWidget {

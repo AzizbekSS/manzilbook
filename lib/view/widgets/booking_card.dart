@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
 
 class BookingCard extends StatelessWidget {
   void Function()? onTap;

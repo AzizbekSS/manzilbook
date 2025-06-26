@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
-import 'package:manzilbook/helper/util/padding/app_padding.dart';
-import 'package:manzilbook/helper/util/route/animateroute.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/widgets/notificatons.dart';
 
 class NotificationPage extends StatefulWidget {
