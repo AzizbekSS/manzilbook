@@ -65,8 +65,8 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                 TextFormField(
                   controller: _nameController,
                   decoration: InputDecoration(
-                    labelText: "Service nomi",
-                    labelStyle: TextStyle(color: theme.colorScheme.primary),
+                    hintText: "Service nomi",
+                    hintStyle: TextStyle(color: theme.colorScheme.primary),
                     floatingLabelStyle: TextStyle(color: mainColor),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
@@ -75,6 +75,12 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                         width: 1.2,
                       ),
                     ),
+                       enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: theme.colorScheme.primary,
+                            width: 1.2,
+                          ),),
                     prefixIcon: HugeIcon(
                         icon: HugeIcons.strokeRoundedWhatsappBusiness,
                         color: theme.colorScheme.primary),
@@ -89,9 +95,9 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                   controller: _aboutController,
                   maxLines: 4,
                   decoration: InputDecoration(
-                    labelText: "Service haqida ma'lumot",
+                    hintText: "Service haqida ma'lumot",
                     floatingLabelStyle: TextStyle(color: mainColor),
-                    labelStyle: TextStyle(color: theme.colorScheme.primary),
+                    hintStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(
@@ -99,6 +105,12 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                         width: 1.2,
                       ),
                     ),
+                       enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: theme.colorScheme.primary,
+                            width: 1.2,
+                          ),),
                     prefixIcon: HugeIcon(
                         icon: HugeIcons.strokeRoundedInformationSquare,
                         color: theme.colorScheme.primary),
@@ -112,9 +124,9 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                 TextFormField(
                   controller: _addressController,
                   decoration: InputDecoration(
-                    labelText: "Service manzili",
+                    hintText: "Service manzili",
                     floatingLabelStyle: TextStyle(color: mainColor),
-                    labelStyle: TextStyle(color: theme.colorScheme.primary),
+                    hintStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide: BorderSide(
@@ -122,6 +134,12 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                         width: 1.2,
                       ),
                     ),
+                       enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: theme.colorScheme.primary,
+                            width: 1.2,
+                          ),),
                     prefixIcon: HugeIcon(
                         icon: HugeIcons.strokeRoundedLocation01,
                         color: theme.colorScheme.primary),

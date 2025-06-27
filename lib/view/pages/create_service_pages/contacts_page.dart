@@ -38,9 +38,8 @@ class _ContactsPageState extends State<ContactsPage> {
                     keyboardType: TextInputType.phone,  
                     controller: _contactController,
                     decoration: InputDecoration(
-                      labelText: "Aloqa uchun telefon raqami",
-                      floatingLabelStyle: TextStyle(color: mainColor),
-                      labelStyle: TextStyle(
+                      hintText: "Aloqa uchun telefon raqami",
+                      hintStyle: TextStyle(
                         color: theme.colorScheme.primary,
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -48,7 +47,13 @@ class _ContactsPageState extends State<ContactsPage> {
                           borderSide: BorderSide(
                             color: mainColor,
                             width: 1.2,
-                          )),
+                          ),),
+                          enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: theme.colorScheme.primary,
+                            width: 1.2,
+                          ),),
                       prefixIcon: HugeIcon(
                           icon: HugeIcons.strokeRoundedCall02,
                           color: theme.colorScheme.primary),
@@ -63,9 +68,8 @@ class _ContactsPageState extends State<ContactsPage> {
                     keyboardType: TextInputType.phone,
                     controller: _contactController2,
                     decoration: InputDecoration(
-                      labelText: "Aloqa uchun 2-telefon raqam",
-                      floatingLabelStyle: TextStyle(color: mainColor),
-                      labelStyle: TextStyle(
+                      hintText: "Aloqa uchun 2-telefon raqam",
+                      hintStyle: TextStyle(
                         color: theme.colorScheme.primary,
                       ),
                       focusedBorder: OutlineInputBorder(
@@ -73,7 +77,13 @@ class _ContactsPageState extends State<ContactsPage> {
                           borderSide: BorderSide(
                             color: mainColor,
                             width: 1.2,
-                          )),
+                          ),),
+                          enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: theme.colorScheme.primary,
+                            width: 1.2,
+                          ),),
                       prefixIcon: HugeIcon(
                           icon: HugeIcons.strokeRoundedCall02,
                           color: theme.colorScheme.primary),
@@ -88,10 +98,10 @@ class _ContactsPageState extends State<ContactsPage> {
                   TextFormField(
                     controller: _socialController,
                     decoration: InputDecoration(
-                      labelText:
+                      hintText:
                           "Ijtimoiy tarmoqlari (Instagram, Telegram va boshqalar)",
                       floatingLabelStyle: TextStyle(color: mainColor),
-                      labelStyle: TextStyle(color: theme.colorScheme.primary,),
+                      hintStyle: TextStyle(color: theme.colorScheme.primary,),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide(
@@ -99,6 +109,12 @@ class _ContactsPageState extends State<ContactsPage> {
                           width: 1.2,
                         ),
                       ),
+                         enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(12),
+                          borderSide: BorderSide(
+                            color: theme.colorScheme.primary,
+                            width: 1.2,
+                          ),),
                       prefixIcon: HugeIcon(icon: HugeIcons.strokeRoundedInstagram  , color:theme.colorScheme.primary ),
                     ),
                   ),
