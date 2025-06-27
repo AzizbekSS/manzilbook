@@ -120,7 +120,7 @@ class _PlacePageState extends State<PlacePage> {
                           Button(
                             h: h * 0.06,
                             onTap: () {},
-                            w: w * 0.75,
+                            w: w * 0.73,
                             child: Text(
                               'Book',
                               style: TextStyle(

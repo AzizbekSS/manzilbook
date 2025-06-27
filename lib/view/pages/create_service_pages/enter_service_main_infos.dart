@@ -21,7 +21,6 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   final TextEditingController _aboutController = TextEditingController();
   final TextEditingController _addressController = TextEditingController();
 
-
   XFile? _logo;
   List<XFile> _images = [];
 
@@ -49,6 +48,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final h = MediaQuery.of(context).size.height;
+    final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: theme.primaryColor,
       body: SafeArea(
@@ -59,34 +59,6 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'Chooser your logo',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: h * .02,
-                ),
-                Center(
-                  child: GestureDetector(
-                    onTap: _pickLogo,
-                    child: CircleAvatar(
-                      radius: 48,
-                      backgroundColor: mainColor,
-                      backgroundImage: _logo != null
-                          ? Image.file(
-                              File(_logo!.path),
-                              fit: BoxFit.cover,
-                            ).image
-                          : null,
-                      child: _logo == null
-                          ? Icon(Icons.camera_alt,
-                              size: 36, color: theme.primaryColor)
-                          : null,
-                    ),
-                  ),
-                ),
                 SizedBox(
                   height: h * .02,
                 ),
@@ -117,7 +89,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                   controller: _aboutController,
                   maxLines: 4,
                   decoration: InputDecoration(
-                    labelText: "Service haqida to'liq ma'lumot",
+                    labelText: "Service haqida ma'lumot",
                     floatingLabelStyle: TextStyle(color: mainColor),
                     labelStyle: TextStyle(color: theme.colorScheme.primary),
                     focusedBorder: OutlineInputBorder(
@@ -157,7 +129,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                   validator: (v) =>
                       v == null || v.isEmpty ? "Manzil kiriting" : null,
                 ),
-                  SizedBox(
+                SizedBox(
                   height: h * .03,
                 ),
                 Text(
@@ -166,20 +138,24 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                 ),
                 const SizedBox(height: 8),
                 SizedBox(
-                  height: 90,
+                  height: h * .1,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
                       GestureDetector(
                         onTap: _pickImages,
                         child: Container(
-                          width: 80,
-                          height: 80,
+                          width: h * .1,
+                          height: w * .1,
                           decoration: BoxDecoration(
                             color: theme.colorScheme.surface.withOpacity(0.3),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: HugeIcon(icon: HugeIcons.strokeRoundedImageUpload  , color:theme.primaryColor,size: 26, ),
+                          child: HugeIcon(
+                            icon: HugeIcons.strokeRoundedImageUpload,
+                            color: theme.primaryColor,
+                            size: 26,
+                          ),
                         ),
                       ),
                       ..._images.map((img) => Padding(
@@ -188,8 +164,8 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                               borderRadius: BorderRadius.circular(12),
                               child: Image.file(
                                 File(img.path),
-                                width: 80,
-                                height: 80,
+                                width: h * .1,
+                                height: w * .1,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -197,32 +173,7 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
                     ],
                   ),
                 ),
-          
-                Center(
-                  child: ElevatedButton.icon(
-                    style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 16),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        backgroundColor: mainColor),
-                    icon: const Icon(
-                      Icons.check_circle_outline,
-                      color: Colors.white,
-                    ),
-                    label: const Text(
-                      "Saqlash",
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
-                    onPressed: () {
-                   
-                    },
-                  ),
-                ),
+
               ],
             ),
           ),
@@ -231,3 +182,31 @@ class _EnterServiceMainInfosState extends State<EnterServiceMainInfos> {
     );
   }
 }
+
+
+
+
+
+                // Center(
+                //   child: ElevatedButton.icon(
+                //     style: ElevatedButton.styleFrom(
+                //         padding: const EdgeInsets.symmetric(
+                //             horizontal: 40, vertical: 16),
+                //         shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(16),
+                //         ),
+                //         backgroundColor: mainColor),
+                //     icon: const Icon(
+                //       Icons.check_circle_outline,
+                //       color: Colors.white,
+                //     ),
+                //     label: const Text(
+                //       "Saqlash",
+                //       style: TextStyle(
+                //           fontSize: 18,
+                //           fontWeight: FontWeight.bold,
+                //           color: Colors.white),
+                //     ),
+                //     onPressed: () {},
+                //   ),
+                // ),

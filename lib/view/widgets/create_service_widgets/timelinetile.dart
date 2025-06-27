@@ -8,17 +8,20 @@ class MyTimelineTile extends StatelessWidget {
   final bool isFirst;
   final bool isLast;
   final bool isPast;
+  final Widget child;
 
   const MyTimelineTile({
     super.key,
     required this.isFirst,
     required this.isLast,
     required this.isPast,
+    required this.child
   });
 
   @override
   Widget build(BuildContext context) {
     return TimelineTile(
+      endChild: child,
       alignment: TimelineAlign.center,
       indicatorStyle: IndicatorStyle(
         
@@ -35,11 +38,15 @@ class MyTimelineTile extends StatelessWidget {
       axis: TimelineAxis.horizontal,
       isFirst: isFirst,
       isLast: isLast,
-      beforeLineStyle: LineStyle(
+      afterLineStyle: LineStyle(
         color: isPast ? mainColor : mainColor.withOpacity(0.3),
         thickness: 10,
       ),
-    
+        beforeLineStyle: LineStyle(
+          color: isPast ? mainColor : mainColor.withOpacity(0.3),
+          thickness: 10,
+        ),
+      
     );
   }
 }

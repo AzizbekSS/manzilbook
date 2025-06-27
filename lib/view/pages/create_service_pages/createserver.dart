@@ -39,16 +39,20 @@ class CreateServerState extends State<CreateServer> {
     return SafeArea(
       child: Scaffold(
           backgroundColor: Theme.of(context).primaryColor,
-          body: ListView(padding: Dis.only(lr: 8, tb: 10), children: [
+          body: ListView(padding: Dis.only(lr: 8, tb: 10), 
+          
+          children: [
             CreateTileRow(
-              isFirstPast: is1stPast,
-              isSecondPast: is2ndPast,
-              isLastPasat: isLastPast,
+              index: initialIndex,
+              is1stPast: is1stPast,
+              is2ndPast: is2ndPast,
+              isLastPast: isLastPast,
             ),
             SizedBox(
               height: h * .84,
               width: double.maxFinite,
               child: PageView(
+                  physics: NeverScrollableScrollPhysics(),
                   onPageChanged: (value) {
                     setState(() {
                       initialIndex = value;
@@ -66,19 +70,19 @@ class CreateServerState extends State<CreateServer> {
                 GestureDetector(
                   onTap: () {
                     if (initialIndex == 1) {
-                      controller.animateToPage(0,
-                          duration: Duration(milliseconds: 200),
-                          curve: Curves.bounceIn);
                       setState(() {
                         is1stPast = false;
                       });
-                    } else if (initialIndex == 2) {
-                      controller.animateToPage(1,
+                      controller.animateToPage(0,
                           duration: Duration(milliseconds: 200),
                           curve: Curves.bounceIn);
+                    } else if (initialIndex == 2) {
                       setState(() {
                         is2ndPast = false;
                       });
+                      controller.animateToPage(1,
+                          duration: Duration(milliseconds: 200),
+                          curve: Curves.bounceIn);
                     }
                   },
                   child: Container(
@@ -96,7 +100,6 @@ class CreateServerState extends State<CreateServer> {
                       child: Text('Previous',
                           style: TextStyle(
                             color: mainColor,
-                            
                           )),
                     ),
                   ),
@@ -105,25 +108,28 @@ class CreateServerState extends State<CreateServer> {
                     h: h * 0.044,
                     onTap: () {
                       if (initialIndex == 0) {
-                        controller.animateToPage(1,
-                            duration: Duration(milliseconds: 200),
-                            curve: Curves.bounceIn);
                         setState(() {
                           is1stPast = true;
                         });
-                      } else if (initialIndex == 1) {
-                        controller.animateToPage(2,
+                        controller.animateToPage(1,
                             duration: Duration(milliseconds: 200),
                             curve: Curves.bounceIn);
+                      } else if (initialIndex == 1) {
                         setState(() {
                           is2ndPast = true;
                         });
+                        controller.animateToPage(2,
+                            duration: Duration(milliseconds: 200),
+                            curve: Curves.bounceIn);
                       } else {
                         animateRightLeft(HomePage(), context);
                       }
                     },
                     w: w * 0.157,
-                    child: Text("Next",style: TextStyle(color: Colors.white),))
+                    child: Text(
+                      "Next",
+                      style: TextStyle(color: Colors.white),
+                    ))
               ],
             )
           ])),

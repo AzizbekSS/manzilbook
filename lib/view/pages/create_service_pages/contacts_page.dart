@@ -32,7 +32,7 @@ class _ContactsPageState extends State<ContactsPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: h*.03,
+                    height: h*.05,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.phone,  
@@ -57,7 +57,7 @@ class _ContactsPageState extends State<ContactsPage> {
                         v == null || v.isEmpty ? "Kontakt kiriting" : null,
                   ),
                     SizedBox(
-                    height: h*.03,
+                    height: h*.05,
                   ),
                   TextFormField(
                     keyboardType: TextInputType.phone,
@@ -82,7 +82,7 @@ class _ContactsPageState extends State<ContactsPage> {
                         v == null || v.isEmpty ? "Kontakt kiriting" : null,
                   ),
                     SizedBox(
-                    height: h*.03,
+                    height: h*.05,
                   ),
                  
                   TextFormField(
