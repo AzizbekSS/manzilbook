@@ -1,30 +1,63 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
+import 'package:manzilbook/helper/padding/app_padding.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
+import 'package:manzilbook/view/pages/main_pages/place_page.dart';
+import 'package:manzilbook/view/theme/color.dart';
 
 class CategoryTile extends StatelessWidget {
   const CategoryTile({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          leading: CircleAvatar(
-            backgroundColor: Colors.amber,
-            child: HugeIcon(
-              icon: HugeIcons.strokeRoundedCar02,
-              color: Colors.white,
+    final theme = Theme.of(context);
+    return Container(
+      margin: Dis.only(bottom: 10),
+      padding: Dis.only(
+        lr: 10,
+      ),
+      decoration: BoxDecoration(
+          color: mainColor.withOpacity(.17),
+          borderRadius: BorderRadius.circular(15)),
+      child: ListTile(
+        onTap: ()=>animateRightLeft(PlacePage(), context),
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 0,
+        ),
+        title: Text('Dental Health'),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image(
+            image: AssetImage(
+              'assets/images/dentist.jpg',
             ),
-          ),
-          title: Text(
-            'Auto',
-            style: TextStyle(fontSize: 18),
+            height: 200,
+            width: 100,
+            fit: BoxFit.fitWidth,
           ),
         ),
-        Divider(
-          color: Theme.of(context).colorScheme.onPrimary,
-        )
-      ],
+        subtitle: Row(
+          children: [
+            HugeIcon(
+              icon: HugeIcons.strokeRoundedWallet01,
+              color: theme.colorScheme.primary,
+              size: 16,
+            ),
+            Text(
+              ' 100 000 sum',
+              style: TextStyle(
+                color: theme.colorScheme.primary,
+                fontSize: 14,
+              ),
+            ),
+    
+            Text('      4.6'),
+            HugeIcon(color: mainColor,icon: HugeIcons.strokeRoundedStar,size: 14,)
+          ],
+        ),
+      ),
     );
   }
 }

@@ -69,9 +69,7 @@ class _AllPlacesPageState extends State<AllPlacesPage> {
                       ),
                     ),
                   ],
-                )
-            
-           ,
+                ),
       
            SizedBox(
             height: h*.02,
