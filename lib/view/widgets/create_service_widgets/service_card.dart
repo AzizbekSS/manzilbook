@@ -14,34 +14,44 @@ class ServiceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: Dis.only(right: 10),
-          child: ClipRRect(
+    final w = MediaQuery.of(context).size.width;
+    return Container(
+      padding: Dis.all(5),
+       margin: Dis.only(right: 10),
+      height: h * .6,
+        width: w * 0.4,
+           decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.onPrimary,
+          borderRadius: BorderRadius.circular(15),
+        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
               'assets/images/dentist.jpg',
-              height: h * 0.3,
+              fit: BoxFit.cover,
+              height: h * 0.2,
+                  width: w * 0.4,
             ),
           ),
-        ),
-        Text(
-          serviceName,
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
+          Text(
+            serviceName,
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-        Text(
-          "$price sum",
-          style: TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.bold,
+          Text(
+            "$price sum",
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

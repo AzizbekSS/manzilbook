@@ -63,7 +63,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(
-                height: h * 0.4,
+                height: h * 0.31,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,

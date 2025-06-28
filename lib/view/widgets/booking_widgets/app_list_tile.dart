@@ -16,6 +16,7 @@ class MyListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.symmetric(horizontal: 0),
       leading: leading,
       title: title,
       subtitle: subtitle,

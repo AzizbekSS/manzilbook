@@ -22,7 +22,7 @@ class MyApp extends ConsumerWidget {
       themeMode: themeMode,
       theme: lightTheme,
       darkTheme: darkTheme,
-      home:  ChooseRolePage(),
+      home:  HomePage(),
       routes: {
         HomePage.routeName:(context)=>const HomePage(),
       },
