@@ -1,5 +1,8 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:manzilbook/helper/padding/app_padding.dart';
+import 'package:manzilbook/view/theme/color.dart';
 
 class ServiceCard extends StatelessWidget {
   final String serviceName;
@@ -21,7 +24,8 @@ class ServiceCard extends StatelessWidget {
       height: h * .6,
         width: w * 0.4,
            decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.onPrimary,
+          
+          color: mainColor.withOpacity(.17),
           borderRadius: BorderRadius.circular(15),
         ),
       child: Column(

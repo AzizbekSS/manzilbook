@@ -10,7 +10,6 @@ import 'package:manzilbook/view/widgets/booking_widgets/booking_card.dart';
 import 'package:manzilbook/view/widgets/booking_widgets/bottomsheet.dart';
 import 'package:manzilbook/view/widgets/app_widgets/button.dart';
 import 'package:manzilbook/view/widgets/card_widgets/comment.dart';
-import 'package:manzilbook/view/widgets/card_widgets/contact_tile.dart';
 import 'package:manzilbook/view/widgets/app_widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/create_service_widgets/service_card.dart';
 
@@ -22,6 +21,8 @@ class PlacePage extends StatefulWidget {
 }
 
 class _PlacePageState extends State<PlacePage> {
+
+
   @override
   Widget build(BuildContext context) {
     final h = MediaQuery.of(context).size.height;
@@ -29,34 +30,39 @@ class _PlacePageState extends State<PlacePage> {
     return Scaffold(
       appBar: AppBar(
         titleSpacing: -5,
-        leading:IconButton(onPressed:()=> goBack(context), icon: HugeIcon(icon: HugeIcons.strokeRoundedArrowLeft01, color: Theme.of(context).colorScheme.primary)),
+        leading: IconButton(
+          onPressed: () => goBack(context),
+          icon: HugeIcon(
+            icon: HugeIcons.strokeRoundedArrowLeft01,
+            color: Theme.of(context).colorScheme.primary,
+          ),
+        ),
         backgroundColor: Theme.of(context).colorScheme.primary.withOpacity(0.2),
-        title:  MyListTile(
-                      leading: Image.asset(
-                        'assets/images/save.png',
-                        height: 35,
-                      ),
-                      title: Text(
-                        'Dolce',
-                        style: TextStyle(
-                          color: Theme.of(context).colorScheme.surface,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                      subtitle: Text('Dentist • Yunosobod'),
-                    ),
-        
+        title: MyListTile(
+          leading: Image.asset(
+            'assets/images/save.png',
+            height: 35,
+          ),
+          title: Text(
+            'Dolce',
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.surface,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+          subtitle: Text('Dentist • Yunosobod'),
+        ),
       ),
       backgroundColor: Theme.of(context).primaryColor,
       body: SizedBox(
         height: double.infinity,
         width: double.infinity,
         child: SingleChildScrollView(
-           padding:EdgeInsetsGeometryTween(
-                  begin: const EdgeInsets.only(left: 20, right: 20, top: 10),
-                  end: const EdgeInsets.only(left: 20, right: 20, top: 10),
-                ).lerp(0.5),
+          padding: EdgeInsetsGeometryTween(
+            begin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            end: const EdgeInsets.only(left: 20, right: 20, top: 10),
+          ).lerp(0.5),
           child: Column(
             children: [
               SizedBox(
@@ -97,46 +103,46 @@ class _PlacePageState extends State<PlacePage> {
                 ),
               ),
               SizedBox(
-                height: h*.03,
+                height: h * .03,
               ),
-               Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Button(
-                      h: h * 0.06,
-                      onTap: () {},
-                      w: w * 0.73,
-                      child: Text(
-                        'Book',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: w * 0.02,
-                    ),
-                    Button(
-                      h: h * 0.06,
-                      onTap: () {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (context) {
-                              return MyBottomsheet();
-                            });
-                      },
-                      w: w * 0.16,
-                      child: HugeIcon(
-                        icon: HugeIcons.strokeRoundedMore02,
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Button(
+                    h: h * 0.06,
+                    onTap: () {},
+                    w: w * 0.73,
+                    child: Text(
+                      'Book',
+                      style: TextStyle(
                         color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                  ],
-                ),
+                  ),
                   SizedBox(
-                height: h*.03,
+                    width: w * 0.02,
+                  ),
+                  Button(
+                    h: h * 0.06,
+                    onTap: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return MyBottomsheet();
+                          });
+                    },
+                    w: w * 0.16,
+                    child: HugeIcon(
+                      icon: HugeIcons.strokeRoundedMore02,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: h * .03,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -155,8 +161,7 @@ class _PlacePageState extends State<PlacePage> {
                         TextSpan(
                           text: '• From 9AM to 8PM',
                           style: TextStyle(
-                            color:
-                                Theme.of(context).colorScheme.surface,
+                            color: Theme.of(context).colorScheme.surface,
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
                           ),
@@ -170,8 +175,7 @@ class _PlacePageState extends State<PlacePage> {
                         TextSpan(
                           text: 'Distance: ',
                           style: TextStyle(
-                            color:
-                                Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).colorScheme.primary,
                             fontSize: 15,
                             fontWeight: FontWeight.normal,
                           ),
@@ -211,8 +215,7 @@ class _PlacePageState extends State<PlacePage> {
               ListTile(
                 leading: Text(
                   '4.5',
-                  style: TextStyle(
-                      fontSize: 35, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
                 ),
                 title: Row(
                   children: [
@@ -277,56 +280,11 @@ class _PlacePageState extends State<PlacePage> {
                       );
                     }),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'Contacts',
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: h * .03,
               ),
-                SizedBox(
-                height: h*.03,
-              ),
-              ContactTile(
-                leadingIcon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedSmartPhone01,
-                    color: Theme.of(context).colorScheme.primary),
-                onTap: () {},
-                title: 'Social Media',
-              ),
-              ContactTile(
-                leadingIcon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedSmartPhone01,
-                    color: Theme.of(context).colorScheme.primary),
-                onTap: () {},
-                title: 'Social Media',
-              ),
-              ContactTile(
-                leadingIcon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedSmartPhone01,
-                    color: Theme.of(context).colorScheme.primary),
-                onTap: () {},
-                title: 'Social Media',
-              ),
-              ContactTile(
-                leadingIcon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedSmartPhone01,
-                    color: Theme.of(context).colorScheme.primary),
-                onTap: () {},
-                title: 'Social Media',
-              ),
-              ContactTile(
-                leadingIcon: HugeIcon(
-                    icon: HugeIcons.strokeRoundedSmartPhone01,
-                    color: Theme.of(context).colorScheme.primary),
-                onTap: () {},
-                title: 'Social Media',
-              ),
+           
+          
             ],
           ),
         ),
