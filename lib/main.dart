@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:manzilbook/view/pages/create_service_pages/choose_role_page.dart';
-import 'package:manzilbook/view/pages/main_pages/all_places_page.dart';
 import 'package:manzilbook/view/pages/main_pages/home_page.dart';
 import 'package:manzilbook/view/theme/theme.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';

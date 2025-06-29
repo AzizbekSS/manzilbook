@@ -11,9 +11,8 @@ import 'package:manzilbook/view/widgets/app_widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/home_widgets/place_circle.dart';
 import 'package:manzilbook/view/widgets/home_widgets/upper_textfield.dart';
 
-
 class HomePage extends ConsumerStatefulWidget {
-static const String routeName='homepage';
+  static const String routeName = 'homepage';
   const HomePage({super.key});
 
   @override
@@ -27,7 +26,6 @@ class _HomePageState extends ConsumerState<HomePage> {
     final themeNotifier = ref.read(themeNotifierProvider.notifier);
     final isDark = themeMode == ThemeMode.dark;
     final h = MediaQuery.of(context).size.height;
-    // final w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: PreferredSize(
@@ -63,6 +61,9 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(
+                height: h*.01,
+              ),
+              SizedBox(
                 height: h * 0.31,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
@@ -75,7 +76,82 @@ class _HomePageState extends ConsumerState<HomePage> {
                         rating: 4.8,
                         reviewCount: 120,
                         onTap: () {
-                        animateBottomTop(PlacePage(),context);
+                          animateBottomTop(PlacePage(), context);
+                        },
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: h*.03,
+              ),
+              LabelRow(label: 'Beauty procedures'),
+              SizedBox(
+                height: h * .01,
+              ),
+              SizedBox(
+                height: h * 0.31,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return BookingCard(
+                        category: 'Dentistry',
+                        distance: 2.5,
+                        placeName: 'Dolce',
+                        rating: 4.8,
+                        reviewCount: 120,
+                        onTap: () {
+                          animateBottomTop(PlacePage(), context);
+                        },
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: h * .03,
+              ),
+              LabelRow(label: 'Beauty procedures'),
+              SizedBox(
+                height: h * .01,
+              ),
+              SizedBox(
+                height: h * 0.31,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return BookingCard(
+                        category: 'Dentistry',
+                        distance: 2.5,
+                        placeName: 'Dolce',
+                        rating: 4.8,
+                        reviewCount: 120,
+                        onTap: () {
+                          animateBottomTop(PlacePage(), context);
+                        },
+                      );
+                    }),
+              ),
+              SizedBox(
+                height: h * .03,
+              ),
+              LabelRow(label: 'Beauty procedures'),
+              SizedBox(
+                height: h * .01,
+              ),
+              SizedBox(
+                height: h * 0.31,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 10,
+                    itemBuilder: (context, index) {
+                      return BookingCard(
+                        category: 'Dentistry',
+                        distance: 2.5,
+                        placeName: 'Dolce',
+                        rating: 4.8,
+                        reviewCount: 120,
+                        onTap: () {
+                          animateBottomTop(PlacePage(), context);
                         },
                       );
                     }),

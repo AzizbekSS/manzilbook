@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
+import 'package:manzilbook/view/pages/main_pages/categories_page.dart';
 
 class LabelRow extends StatelessWidget {
   final String label;
@@ -20,7 +22,7 @@ class LabelRow extends StatelessWidget {
           ),
         ),
         ElevatedButton(
-          onPressed: () {},
+          onPressed: ()=>animateRightLeft(CategoriesPage(), context),
           style: ElevatedButton.styleFrom(
             minimumSize: Size(15, 35),
             elevation: 0,

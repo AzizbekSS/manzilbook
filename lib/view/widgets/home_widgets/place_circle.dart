@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/padding/app_padding.dart';
+import 'package:manzilbook/helper/route/animateroute.dart';
+import 'package:manzilbook/view/pages/main_pages/categories_page.dart';
 
 class PlaceCircle extends StatelessWidget {
   final HugeIcon icon;
@@ -14,10 +16,13 @@ class PlaceCircle extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CircleAvatar(
-            backgroundColor: Colors.orangeAccent,
-            radius: 23,
-            child: icon,
+          GestureDetector(
+            onTap: ()=>animateRightLeft(CategoriesPage(),context,),
+            child: CircleAvatar(
+              backgroundColor: Colors.orangeAccent,
+              radius: 23,
+              child: icon,
+            ),
           ),
           Text(
             text,

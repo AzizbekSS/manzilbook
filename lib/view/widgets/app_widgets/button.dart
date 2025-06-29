@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:manzilbook/view/theme/color.dart';
 
@@ -17,7 +19,10 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
+      splashColor: mainColor,
+      borderRadius: BorderRadius.circular(10),
+      radius: 20,
       onTap: onTap,
       child: Container(
         height: h,

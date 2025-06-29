@@ -7,8 +7,8 @@ import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/pages/main_pages/place_page.dart';
 import 'package:manzilbook/view/theme/color.dart';
 
-class CategoryTile extends StatelessWidget {
-  const CategoryTile({super.key});
+class AllPlacesTile extends StatelessWidget {
+  const AllPlacesTile({super.key});
 
   @override
   Widget build(BuildContext context) {
