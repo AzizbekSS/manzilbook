@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hugeicons/hugeicons.dart';
@@ -10,6 +12,8 @@ import 'package:manzilbook/view/widgets/booking_widgets/booking_card.dart';
 import 'package:manzilbook/view/widgets/app_widgets/label_row.dart';
 import 'package:manzilbook/view/widgets/home_widgets/place_circle.dart';
 import 'package:manzilbook/view/widgets/home_widgets/upper_textfield.dart';
+
+import '../../widgets/home_widgets/my_drawer.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   static const String routeName = 'homepage';
@@ -25,9 +29,14 @@ class _HomePageState extends ConsumerState<HomePage> {
     final themeMode = ref.watch(themeNotifierProvider);
     final themeNotifier = ref.read(themeNotifierProvider.notifier);
     final isDark = themeMode == ThemeMode.dark;
+    final theme=Theme.of(context);
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+
+drawer: MyDrawer(theme: theme, h: h),
+
+      backgroundColor: 
+      Theme.of(context).primaryColor,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(h * 0.065),
         child: MyAppBar(),
@@ -163,3 +172,5 @@ class _HomePageState extends ConsumerState<HomePage> {
     );
   }
 }
+
+

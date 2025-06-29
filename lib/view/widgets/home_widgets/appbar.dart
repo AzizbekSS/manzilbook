@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/view/pages/main_pages/notification_page.dart';
 
-import '../../../helper/padding/app_padding.dart';
 import '../../../helper/route/animateroute.dart';
 
 class MyAppBar extends StatelessWidget {
@@ -10,16 +9,11 @@ class MyAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return AppBar(
       elevation: 0,
       backgroundColor: Colors.transparent,
-      leading: Padding(
-        padding: Dis.all(8),
-        child: Image.asset(
-          "assets/images/save.png",
-          width: 20,
-        ),
-      ),
+     
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
