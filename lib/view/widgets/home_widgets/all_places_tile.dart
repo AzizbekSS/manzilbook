@@ -22,7 +22,7 @@ class AllPlacesTile extends StatelessWidget {
           color: mainColor.withOpacity(.17),
           borderRadius: BorderRadius.circular(15)),
       child: ListTile(
-        onTap: ()=>animateRightLeft(PlacePage(), context),
+        onTap: () => animateRightLeft(PlacePage(), context),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 0,
         ),
@@ -52,9 +52,12 @@ class AllPlacesTile extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-    
             Text('      4.6'),
-            HugeIcon(color: mainColor,icon: HugeIcons.strokeRoundedStar,size: 14,)
+            HugeIcon(
+              icon: Icons.star,
+              color: mainColor,
+              size: 16,
+            ),
           ],
         ),
       ),

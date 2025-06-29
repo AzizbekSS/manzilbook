@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:hugeicons/hugeicons.dart';
 import 'package:manzilbook/helper/padding/app_padding.dart';
 import 'package:manzilbook/view/theme/color.dart';
 
@@ -66,30 +67,22 @@ class BookingCard extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Padding(
-                    padding: Dis.only(top: 5, left: 15),
-                    child: RichText(
-                      text: TextSpan(
-                        children: [
-                        TextSpan(
-                          text: rating.toString(),
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: mainColor,
-                          ),
-                        ),
-                        TextSpan(
-                          text: ' ⭐',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: mainColor,
-                          ),
-                        ),
-                      ]),
-                    ),
-                  ),
+             Row(
+              children: [
+                    Text(
+                '4.8',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16,
+                ),
+              ),
+              HugeIcon(
+                icon: Icons.star,
+                color: mainColor,
+                size: 16,
+              ),
+              ],
+             )
                 ],
               ),
               RichText(
