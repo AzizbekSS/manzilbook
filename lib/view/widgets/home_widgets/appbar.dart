@@ -41,7 +41,7 @@ class MyAppBar extends StatelessWidget {
             icon: HugeIcon(
               icon: HugeIcons.strokeRoundedNotification02,
               color: Theme.of(context).colorScheme.secondary,
-            )),
+            ),),
       ],
     );
   }

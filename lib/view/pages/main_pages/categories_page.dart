@@ -15,6 +15,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final h=MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: theme.primaryColor,
       appBar: AppBar(
@@ -35,7 +36,7 @@ class _CategoriesPageState extends State<CategoriesPage> {
         itemCount: 5,
         itemBuilder: (context,index){
         return SizedBox(
-          height:300,
+          height:h*.42,
           child: Cardbycategory());
       }),
     );

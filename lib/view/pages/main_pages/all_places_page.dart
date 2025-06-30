@@ -44,7 +44,7 @@ class _AllPlacesPageState extends State<AllPlacesPage> {
                     ),
                     SizedBox(
                       height: h * .07,
-                      width: w * .85,
+                      width: w * .82,
                       child: TextField(
                         decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(

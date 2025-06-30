@@ -60,7 +60,7 @@ class _PlacePageState extends State<PlacePage> {
         width: double.infinity,
         child: SingleChildScrollView(
           padding: EdgeInsetsGeometryTween(
-            begin: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            begin: const EdgeInsets.only(left: 10, right: 10, top: 10),
             end: const EdgeInsets.only(left: 20, right: 20, top: 10),
           ).lerp(0.5),
           child: Column(
@@ -111,7 +111,7 @@ class _PlacePageState extends State<PlacePage> {
                   Button(
                     h: h * 0.06,
                     onTap: () {},
-                    w: w * 0.73,
+                    w: w * 0.71,
                     child: Text(
                       'Book',
                       style: TextStyle(

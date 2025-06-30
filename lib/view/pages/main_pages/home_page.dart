@@ -7,6 +7,7 @@ import 'package:manzilbook/helper/padding/app_padding.dart';
 import 'package:manzilbook/helper/route/animateroute.dart';
 import 'package:manzilbook/view/pages/main_pages/place_page.dart';
 import 'package:manzilbook/view/theme/theme_provider.dart';
+import 'package:manzilbook/view/widgets/card_widgets/newxt_order_card.dart';
 import 'package:manzilbook/view/widgets/home_widgets/appbar.dart';
 import 'package:manzilbook/view/widgets/booking_widgets/booking_card.dart';
 import 'package:manzilbook/view/widgets/app_widgets/label_row.dart';
@@ -55,7 +56,7 @@ drawer: MyDrawer(theme: theme, h: h),
             children: [
               UpperTextfield(),
               SizedBox(
-                height: 100,
+                height: h*.14,
                 child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
@@ -67,6 +68,13 @@ drawer: MyDrawer(theme: theme, h: h),
                         text: 'Dine out',
                       );
                     }),
+              ),
+              SizedBox(
+                height: h*.01,
+              ),
+              NextOrderCard(),
+              SizedBox(
+                height: h*.03,
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(

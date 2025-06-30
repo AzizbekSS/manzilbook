@@ -21,46 +21,46 @@ class AllPlacesTile extends StatelessWidget {
       decoration: BoxDecoration(
           color: mainColor.withOpacity(.17),
           borderRadius: BorderRadius.circular(15)),
-      child: ListTile(
-        onTap: () => animateRightLeft(PlacePage(), context),
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: 0,
-        ),
-        title: Text('Dental Health'),
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image(
-            image: AssetImage(
-              'assets/images/dentist.jpg',
+        child: ListTile(
+          onTap: () => animateRightLeft(PlacePage(), context),
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 0,
+          ),
+          title: Text('Dental Health'),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image(
+              image: AssetImage(
+                'assets/images/dentist.jpg',
+              ),
+              height: 200,
+              width: 100,
+              fit: BoxFit.fitWidth,
             ),
-            height: 200,
-            width: 100,
-            fit: BoxFit.fitWidth,
+          ),
+          subtitle: Row(
+            children: [
+              HugeIcon(
+                icon: HugeIcons.strokeRoundedWallet01,
+                color: theme.colorScheme.primary,
+                size: 16,
+              ),
+              Text(
+                ' 100 000 sum',
+                style: TextStyle(
+                  color: theme.colorScheme.primary,
+                  fontSize: 14,
+                ),
+              ),
+              Text('      4.6'),
+              HugeIcon(
+                icon: Icons.star,
+                color: mainColor,
+                size: 16,
+              ),
+            ],
           ),
         ),
-        subtitle: Row(
-          children: [
-            HugeIcon(
-              icon: HugeIcons.strokeRoundedWallet01,
-              color: theme.colorScheme.primary,
-              size: 16,
-            ),
-            Text(
-              ' 100 000 sum',
-              style: TextStyle(
-                color: theme.colorScheme.primary,
-                fontSize: 14,
-              ),
-            ),
-            Text('      4.6'),
-            HugeIcon(
-              icon: Icons.star,
-              color: mainColor,
-              size: 16,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

@@ -95,7 +95,8 @@ class Cardbycategory extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
+          SizedBox(height: h*.03,),
         ],
       ),
     );
