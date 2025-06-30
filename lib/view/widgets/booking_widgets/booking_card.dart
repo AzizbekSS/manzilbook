@@ -29,7 +29,7 @@ class BookingCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: Dis.only(right: 10),
+        margin: Dis.only(right: 10,bottom: 20),
         height: h * .1,
         width: w * 0.4,
         decoration: BoxDecoration(

@@ -27,9 +27,7 @@ class HomePage extends ConsumerStatefulWidget {
 class _HomePageState extends ConsumerState<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final themeMode = ref.watch(themeNotifierProvider);
-    final themeNotifier = ref.read(themeNotifierProvider.notifier);
-    final isDark = themeMode == ThemeMode.dark;
+
     final theme=Theme.of(context);
     final h = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -42,19 +40,16 @@ drawer: MyDrawer(theme: theme, h: h),
         preferredSize: Size.fromHeight(h * 0.065),
         child: MyAppBar(),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        onPressed: themeNotifier.toggleTheme,
-        child: Icon(
-          isDark ? Icons.light_mode : Icons.dark_mode,
-        ),
-      ),
+   
       body: Padding(
         padding: Dis.only(lr: 8, tb: 8),
         child: SingleChildScrollView(
           child: Column(
             children: [
               UpperTextfield(),
+              SizedBox(
+                height: h*.01,
+              ),
               SizedBox(
                 height: h*.14,
                 child: ListView.builder(
@@ -74,7 +69,7 @@ drawer: MyDrawer(theme: theme, h: h),
               ),
               NextOrderCard(),
               SizedBox(
-                height: h*.03,
+                height: h*.02,
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(
@@ -99,7 +94,7 @@ drawer: MyDrawer(theme: theme, h: h),
                     }),
               ),
               SizedBox(
-                height: h*.03,
+                height: h*.02,
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(
@@ -124,7 +119,7 @@ drawer: MyDrawer(theme: theme, h: h),
                     }),
               ),
               SizedBox(
-                height: h * .03,
+                height: h * .02,
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(
@@ -149,7 +144,7 @@ drawer: MyDrawer(theme: theme, h: h),
                     }),
               ),
               SizedBox(
-                height: h * .03,
+                height: h * .02,
               ),
               LabelRow(label: 'Beauty procedures'),
               SizedBox(
